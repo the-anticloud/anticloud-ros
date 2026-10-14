@@ -1,0 +1,53 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:f1684c38-1358-531c-bb43-82b31f7b927e",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-12T07:21:31Z",
+    "component": {
+      "type": "application",
+      "name": "ROS",
+      "version": "7f7d91724dc9",
+      "bom-ref": "pkg:generic/anticloud/ROS@7f7d91724dc9",
+      "purl": "pkg:generic/anticloud/ROS@7f7d91724dc9",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "7f7d91724dc9cae43d5c3868821f4f8b79877d1a"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": ""
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "catkin",
+      "version": "unspecified",
+      "purl": "pkg:generic/catkin",
+      "bom-ref": "native/catkin@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "gazebo",
+      "version": "unspecified",
+      "purl": "pkg:generic/gazebo",
+      "bom-ref": "native/gazebo@unspecified"
+    }
+  ]
+}
