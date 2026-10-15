@@ -2,13 +2,11 @@
  "schema": "anticloud.tier-bench/1",
  "project": "ROS",
  "source": {
-  "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\AUTOMOTIVE\\ROS\\UPSTREAM_CLONE",
   "git": {
-   "head": "7f7d91724dc9cae43d5c3868821f4f8b79877d1a",
-   "url": "https://github.com/chvmp/champ",
-   "branch": "master",
-   "committed_at": "",
-   "sha_verified_from": "GitHub API substitute swap 2026-10-12 | unified 2026-10-14 (API-exists + content/clone anchor)"
+   "url": "https://github.com/ros/ros",
+   "head": "99fd9bb76338f3315cd0a89af700d789ef337ea6",
+   "sha_verified_from": "revendor 2026-10-15: GitHub API commit lookup",
+   "previous_substitute": "https://github.com/chvmp/champ"
   }
  },
  "metrics": {
