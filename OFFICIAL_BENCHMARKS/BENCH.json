@@ -1,0 +1,526 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "ROS",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\AUTOMOTIVE\\ROS\\UPSTREAM_CLONE",
+    "git": {
+      "head": "",
+      "url": "https://github.com/",
+      "branch": "master",
+      "committed_at": "2026-09-29T11:06:59+04:00"
+    }
+  },
+  "metrics": {
+    "files_total": 204,
+    "source_files_scanned": 79,
+    "lines_of_code": 13659,
+    "languages": {
+      ".py": 78,
+      ".xml": 36,
+      "(none)": 18,
+      ".txt": 14,
+      ".rst": 11,
+      ".mk": 8,
+      ".tmpl": 7,
+      ".cmake": 7,
+      ".em": 6,
+      ".bat": 4,
+      ".yaml": 3,
+      ".cpp": 3,
+      ".dox": 2,
+      ".launch": 1,
+      ".bash": 1
+    }
+  },
+  "licence": {
+    "spdx": "BSD-3-Clause",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 13,
+    "unique": 2,
+    "by_ecosystem": {
+      "native": 13
+    },
+    "list": [
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "tools/rosunit/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "tools/rosmake/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "tools/roscreate/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "tools/rosclean/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "tools/rosboost_cfg/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "tools/rosbash/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "ros/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "core/roslib/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Boost",
+        "version": "",
+        "source_file": "core/roslib/CMakeLists.txt",
+        "raw": "find_package(Boost"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Boost",
+        "version": "",
+        "source_file": "core/roslib/CMakeLists.txt",
+        "raw": "find_package(Boost"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "core/roslang/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "core/rosbuild/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      },
+      {
+        "ecosystem": "native",
+        "name": "catkin",
+        "version": "",
+        "source_file": "core/mk/CMakeLists.txt",
+        "raw": "find_package(catkin"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 32,
+    "files_with_findings": 26,
+    "severity": {
+      "high": 2,
+      "medium": 4,
+      "low": 26
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "core/roslib/src/roslib/gentools.py",
+            "line": 214,
+            "cwe": "CWE-327",
+            "snippet": "return _compute_hash_v1(get_deps_dict, hashlib.md5())"
+          },
+          {
+            "severity": "medium",
+            "file": "core/rosbuild/core/rosbuild/bin/download_checkmd5.py",
+            "line": 69,
+            "cwe": "CWE-327",
+            "snippet": "m = hashlib.md5(open(dest, \"rb\").read())"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "tools/rosbash/test/test_scripts.py",
+            "line": 49,
+            "cwe": "CWE-78",
+            "snippet": "subprocess.check_call('touch foo.launch', shell=True, cwd=self.test_root_path)"
+          },
+          {
+            "severity": "high",
+            "file": "core/roslib/src/roslib/msgs.py",
+            "line": 582,
+            "cwe": "CWE-95",
+            "snippet": "return True if eval(val) else False"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 16,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tools/rosunit/src/rosunit/baretest.py",
+            "line": 146,
+            "cwe": "CWE-",
+            "snippet": "# TODO: really need different, non-node version of LocalProcess instead of these extra args"
+          },
+          {
+            "severity": "low",
+            "file": "tools/rosunit/src/rosunit/junitxml.py",
+            "line": 554,
+            "cwe": "CWE-",
+            "snippet": "# TODO: still some issues with the numbers adding up if tests fail to launch"
+          },
+          {
+            "severity": "low",
+            "file": "tools/rosunit/src/rosunit/xmlrunner.py",
+            "line": 246,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Python 2.5: Use the with statement"
+          },
+          {
+            "severity": "low",
+            "file": "tools/rosunit/scripts/pycoverage_to_html.py",
+            "line": 79,
+            "cwe": "CWE-",
+            "snippet": "# TODO: rewrite, buggy"
+          },
+          {
+            "severity": "low",
+            "file": "tools/rosunit/scripts/summarize_results.py",
+            "line": 74,
+            "cwe": "CWE-",
+            "snippet": "# TODO: still some issues with the numbers adding up if tests fail to launch"
+          },
+          {
+            "severity": "low",
+            "file": "tools/rosmake/src/rosmake/parallel_build.py",
+            "line": 76,
+            "cwe": "CWE-",
+            "snippet": "# TODO: may no longer need this now that we've ported to rospkg"
+          },
+          {
+            "severity": "low",
+            "file": "tools/rosbash/test/test_rosbash.bash",
+            "line": 5,
+            "cwe": "CWE-",
+            "snippet": "# TODO extend this script"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/test/test_roslib_names.py",
+            "line": 288,
+            "cwe": "CWE-",
+            "snippet": "# TODO: test with remappings"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/test/test_roslib_stacks.py",
+            "line": 181,
+            "cwe": "CWE-",
+            "snippet": "# TODO: setup directory tree so that this can be more precisely calculated"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/src/roslib/manifestlib.py",
+            "line": 129,
+            "cwe": "CWE-",
+            "snippet": "# TDS 20110419:  this is a hack."
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/src/roslib/msgs.py",
+            "line": 84,
+            "cwe": "CWE-",
+            "snippet": "# TODOXXX: unit test"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/src/roslib/names.py",
+            "line": 45,
+            "cwe": "CWE-",
+            "snippet": "# TODO: deprecate PRN_SEPARATOR"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/src/roslib/network.py",
+            "line": 61,
+            "cwe": "CWE-",
+            "snippet": "# TODO: change this to rosgraph equivalents once we have ported this module"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/src/roslib/packages.py",
+            "line": 81,
+            "cwe": "CWE-",
+            "snippet": "# TODO: go through the code and eliminate unused methods -- there's far too many combos here"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/src/roslib/stacks.py",
+            "line": 80,
+            "cwe": "CWE-",
+            "snippet": "# TODO: need to resolve issues regarding whether the"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/src/roslib/stack_manifest.py",
+            "line": 124,
+            "cwe": "CWE-",
+            "snippet": "# TODO: validate"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "tools/rosmake/src/rosmake/engine.py",
+            "line": 631,
+            "cwe": "CWE-1188",
+            "snippet": "parser.add_option('--disable-logging', dest='logging_enabled', default=True,"
+          },
+          {
+            "severity": "medium",
+            "file": "core/roslib/src/roslib/gentools.py",
+            "line": 304,
+            "cwe": "CWE-1188",
+            "snippet": "@param compute_files: (optional, default=True) compute file"
+          }
+        ]
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 10,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tools/rosunit/src/rosunit/baretest.py",
+            "line": 464,
+            "cwe": "CWE-319",
+            "snippet": "# http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/347462"
+          },
+          {
+            "severity": "low",
+            "file": "tools/rosunit/src/rosunit/junitxml.py",
+            "line": 352,
+            "cwe": "CWE-319",
+            "snippet": "# unicode characters. This little recipe I from http://boodebr.org/main/python/all-about-python-and-unicode#UNI_XML"
+          },
+          {
+            "severity": "low",
+            "file": "tools/rosmake/src/rosmake/engine.py",
+            "line": 367,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.chiark.greenend.org.uk/ucgi/~cjwatson/blosxom/2009-07-02-python-sigpipe.html"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/test/test_roslib_manifest.py",
+            "line": 106,
+            "cwe": "CWE-319",
+            "snippet": "self.assertEquals('http://pr.willowgarage.com/package/', m.url)"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/test/test_roslib_manifestlib.py",
+            "line": 161,
+            "cwe": "CWE-319",
+            "snippet": "self.assertEquals('http://pr.willowgarage.com/package/', m.url)"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/test/test_roslib_rosenv.py",
+            "line": 85,
+            "cwe": "CWE-319",
+            "snippet": "env = {'ROS_MASTER_URI': 'http://localhost:1234'}"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/test/test_roslib_stack_manifest.py",
+            "line": 51,
+            "cwe": "CWE-319",
+            "snippet": "self.assertEquals('http://ros.org/stack/', m.url)"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/src/roslib/network.py",
+            "line": 175,
+            "cwe": "CWE-319",
+            "snippet": "# see http://alastairs-place.net/netifaces/"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/src/roslib/srvs.py",
+            "line": 37,
+            "cwe": "CWE-319",
+            "snippet": "Implements U{http://ros.org/wiki/srv}"
+          },
+          {
+            "severity": "low",
+            "file": "core/roslib/include/ros/package.h",
+            "line": 48,
+            "cwe": "CWE-319",
+            "snippet": "Windows import/export and gnu http://gcc.gnu.org/wiki/Visibility"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 0,
+    "files_with_findings": 0,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:8916715e-6e84-578c-bbfb-d52c0f36cb59",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T08:05:45Z",
+      "component": {
+        "type": "application",
+        "name": "ROS",
+        "version": "83b357604d34",
+        "bom-ref": "pkg:generic/anticloud/ROS@83b357604d34",
+        "purl": "pkg:generic/anticloud/ROS@83b357604d34",
+        "licenses": [
+          {
+            "license": {
+              "id": "BSD-3-Clause"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": ""
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "catkin",
+        "version": "unspecified",
+        "purl": "pkg:generic/catkin",
+        "bom-ref": "native/catkin@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "Boost",
+        "version": "unspecified",
+        "purl": "pkg:generic/Boost",
+        "bom-ref": "native/Boost@unspecified"
+      }
+    ]
+  },
+  "elapsed_seconds": 4.04
+}
