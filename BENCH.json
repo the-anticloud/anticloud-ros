@@ -6,7 +6,7 @@
    "url": "https://github.com/ros/ros",
    "head": "99fd9bb76338f3315cd0a89af700d789ef337ea6",
    "sha_verified_from": "revendor 2026-10-15: GitHub API commit lookup",
-   "previous_substitute": "https://github.com/chvmp/champ"
+   "previous_substitute": "https://github.com/ros/ros"
   }
  },
  "metrics": {
